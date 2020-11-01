@@ -1,7 +1,7 @@
 <html>
 <body>
-<p>Sample Comment Form</p>
-<form name="sampleCommentForm" method="post" netlify>
+<p>コメント入力フォーム</p>
+<form name="sampleCommentForm" method="post" netlify-honeypot="bot-field" netlify>
   <p>
     <label>Name: <input type="text" name="name" /></label>
   </p>
@@ -14,7 +14,16 @@
   <div>
     <p>コメントは承認されると表示されます</p>
     <button type="submit">Send</button>
+    <input name="bot-field" />
   </div>
+</form>
+<br><br>
+<p>承認済みコメント一覧</p>
+<form name="sampleApprovedComments" method="post" netlify netlify-honeypod="bot-field">
+  <input type="text" name="name">
+  <input type="email" name="email">
+  <textarea name="message"></textarea>
+  <input name="bot-field" />
 </form>
 </body>
 </html>
