@@ -61,7 +61,7 @@ exports.handler = function (event, context, callback) {
             console.log(msg)
             purgeComment(id)
           }
-          const msg = "Comment registered. Site deploying to include it."
+          msg = "Comment registered. Site deploying to include it."
           callback(null, {
             statusCode: 200,
             body: msg
