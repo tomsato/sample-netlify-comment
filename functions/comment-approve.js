@@ -32,7 +32,7 @@ exports.handler = function (event, context, callback) {
 
         // now we have the data, let's massage it and post it to the approved form
         const payload = {
-          'form-name': "approvedComments",
+          'form-name': "sampleApprovedComments",
           'path': data.path,
           'pageKey': data.pageKey,
           'received': new Date(),
