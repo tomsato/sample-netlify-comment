@@ -3,6 +3,7 @@ var request = require("request")
 exports.handler = function(event, context, callback) {
   const body = JSON.parse(event.body)
   const slackURL = process.env.SLACK_WEBHOOK_URL
+  console.log(body)
   const slackPayload = {
     "text": "New comment on " + process.env.URL,
     "attachments": [
@@ -12,7 +13,7 @@ exports.handler = function(event, context, callback) {
         "author_name": body.data.name + ' ' + body.data.email,
         "title": body.data.path,
         "title_link": process.env.URL + body.data.path,
-        "text": body.data.content
+        "text": body.data.message
       },
       {
         "fallback": "Manage comments on " + process.env.URL,
@@ -34,6 +35,7 @@ exports.handler = function(event, context, callback) {
         ]
       }]
   }
+  console.log(slackPayload)
 
   request.post({ url: slackURL, json: slackPayload }, function (err, httpResponse, body) {
     let msg = ''
