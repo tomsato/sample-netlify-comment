@@ -1,0 +1,11 @@
+[build]
+  functions = './functions'
+
+[[plugins]]
+  package = "netlify-plugin-form-submissions"
+
+  [plugins.inputs]
+    formNames = "sampleApprovedComments"
+
+    # the folder to recieve json files for each form
+    dataDirectory = "_data"
