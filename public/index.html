@@ -7,7 +7,7 @@
 <body>
 <div>
   <p>コメント入力フォーム</p>
-  <form id="my-form" action="/" name="sampleCommentForm" method="post" netlify-honeypot="bot-field" onsubmit="alert('Thank you!')" netlify>
+  <form id="my-form" action="/" name="sampleCommentForm" method="post" netlify-honeypot="bot-field" netlify>
     <p>
       <label>Name: <input type="text" name="name" /></label>
     </p>
@@ -42,6 +42,11 @@ $.getJSON(url, (json) => {
     $('#approvalCommentsList').append(`<li>Name: ${json[i].data.name}, Message: ${json[i].data.content}</li>`)
   }
 })
+
+// 送信前に一言感謝
+$("#my-form").submit(function(e) {
+  alert("Thank you!");
+});
 </script>
 </body>
 </html>
