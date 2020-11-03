@@ -2,7 +2,7 @@
 <body>
 <div>
   <p>コメント入力フォーム</p>
-  <form id="my-form" action="/" name="sampleCommentForm" method="post" netlify-honeypot="bot-field" netlify onsubmit="alert('Thank you!')">
+  <form id="my-form" action="/" name="sampleCommentForm" method="post" netlify-honeypot="bot-field" onsubmit="alert('Thank you!')" netlify>
     <p>
       <label>Name: <input type="text" name="name" /></label>
     </p>
@@ -16,10 +16,10 @@
       <label>Bot Field(ここに値が入るとスポム判定する): <input name="bot-field"/></label>
     </p>
     <div>
-      <button type="submit">Send</button>
+      <input type="submit" value="Send" />
       <p>※ コメントは承認されると表示されます</p>
-      <input type="hidden" name="path" value="index.html">
-      <input type="hidden" name="pageKey" value="1">
+      <input type="hidden" name="path" value="index.html" />
+      <input type="hidden" name="pageKey" value="1" />
     </div>
   </form>
 </div>
