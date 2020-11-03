@@ -7,4 +7,4 @@
 
   [plugins.inputs]
     formNames = "sampleApprovedComments"
-    dataDirectory = "_data"
+    dataDirectory = "public/_data"
