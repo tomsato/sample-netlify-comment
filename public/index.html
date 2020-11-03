@@ -2,7 +2,7 @@
 <body>
 <div>
   <p>コメント入力フォーム</p>
-  <form id="my-form" name="sampleCommentForm" method="post" netlify-honeypot="bot-field" netlify>
+  <form id="my-form" action="/" name="sampleCommentForm" method="post" netlify-honeypot="bot-field" netlify onclick="alert('Thank you!')">
     <p>
       <label>Name: <input type="text" name="name" /></label>
     </p>
@@ -36,16 +36,6 @@ $.getJSON(url, (json) => {
   for (let i = 0; i < json.length; i++) {
     $('#approvalCommentsList').append(`<li>Name: ${json[i].data.name}, Message: ${json[i].data.content}</li>`)
   }
-})
-
-// コメント送信時にページ繊維させない
-$("#my-form").submit(function(e) {
-  e.preventDefault()
-  const $form = $(this)
-  // AJAXリクエストのコンテンツはURLエンコードされている必要があることに注意
-  $.post($form.attr("action"), $form.serialize()).then(function() {
-    alert("Thank you!")
-  })
 })
 </script>
 </body>
