@@ -1,0 +1,32 @@
+<html>
+<body>
+<p>コメント入力フォーム</p>
+<form name="sampleCommentForm" method="post" netlify>
+  <p>
+    <label>Name: <input type="text" name="name" /></label>
+  </p>
+  <p>
+    <label>Email(任意): <input type="email" name="email" /></label>
+  </p>
+  <p>
+    <label>Message: <textarea name="content"></textarea></label>
+  </p>
+  <div>
+    <button type="submit">Send</button>
+    <input type="hidden" name="path" value="index.html">
+    <input type="hidden" name="pageKey" value="1">
+  </div>
+</form>
+<p>※ コメントは承認されると表示されます</p>
+<div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script language="javascript" type="text/javascript">
+const url = '/_data/sampleApprovedComments_submissions.json'
+
+$.getJSON(url, (data) => {
+  console.log(`id=${data.id}, name=${data.name}, email=${data.email}`);
+})
+</script>
+</body>
+</html>
