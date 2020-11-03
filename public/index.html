@@ -24,8 +24,12 @@
 <script language="javascript" type="text/javascript">
 const url = '/_data/sampleApprovedComments_submissions.json'
 
-$.getJSON(url, (data) => {
-  console.log(`id=${data.id}, name=${data.name}, email=${data.email}`);
+$.getJSON(url, (json) => {
+  console.log(json)
+  for (let i = 0; i < json.length; i++) {
+    console.log(json[i])
+    console.log(`id=${json[i].data.id}, name=${json[i].data.name}, email=${json[i].data.email}`);
+  }
 })
 </script>
 </body>
