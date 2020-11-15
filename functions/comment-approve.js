@@ -34,7 +34,6 @@ exports.handler = function (event, context, callback) {
         const payload = {
           'form-name': "sampleApprovedComments",
           'path': data.path,
-          'pageKey': data.pageKey,
           'received': new Date(),
           'email': data.email,
           'name': data.name,
