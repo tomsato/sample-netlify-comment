@@ -1,7 +1,7 @@
 var request = require("request")
 
 function purgeComment(id) {
-  var url = `https://api.netlify.com/api/v1/submissions/${id}?access_token=${process.env.API_AUTH}`
+  var url = `https://api.netlify.com/api/v1/submissions/${id}?access_token=${process.env.NETLIFY_AUTH_TOKEN}`
   request.delete(url, function (err, response, body) {
     if (err) {
       return console.log(err)
@@ -24,7 +24,7 @@ exports.handler = function (event, context, callback) {
       body: "Comment deleted"
     })
   } else if (method == "approve") {
-    const url = `https://api.netlify.com/api/v1/submissions/${id}?access_token=${process.env.API_AUTH}`
+    const url = `https://api.netlify.com/api/v1/submissions/${id}?access_token=${process.env.NETLIFY_AUTH_TOKEN}`
 
     request(url, function (err, response, body) {
       if (!err && response.statusCode === 200) {
